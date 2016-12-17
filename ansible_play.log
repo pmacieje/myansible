@@ -1,0 +1,21 @@
+
+PLAY [mylab] *******************************************************************
+
+TASK [setup] *******************************************************************
+ok: [c003s7130]
+ok: [c003s7129]
+ok: [c003s7046]
+ok: [c003s7045]
+
+TASK [Remove multi packages] ***************************************************
+changed: [c003s7045] => (item=[u'wget', u'ftp', u'httpd'])
+changed: [c003s7130] => (item=[u'wget', u'ftp', u'httpd'])
+changed: [c003s7129] => (item=[u'wget', u'ftp', u'httpd'])
+changed: [c003s7046] => (item=[u'wget', u'ftp', u'httpd'])
+
+PLAY RECAP *********************************************************************
+c003s7045                  : ok=2    changed=1    unreachable=0    failed=0   
+c003s7046                  : ok=2    changed=1    unreachable=0    failed=0   
+c003s7129                  : ok=2    changed=1    unreachable=0    failed=0   
+c003s7130                  : ok=2    changed=1    unreachable=0    failed=0   
+

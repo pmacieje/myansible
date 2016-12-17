@@ -1,0 +1,8 @@
+- hosts: mylab
+  remote_user: root
+
+  tasks:
+  - name: Delete OS user
+    user: name=testadm state=absent remove=yes
+  - name: Add to sudoers
+    shell: echo "testadm ALL=(ALL) NOPASSWD{{':'}} ALL" >> /etc/sudoers

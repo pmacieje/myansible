@@ -1,0 +1,11 @@
+- hosts: mylab
+  remote_user: root
+
+  tasks:
+  - name: Remove multi packages
+    yum: name={{item}} state=absent
+    with_items:
+    - wget
+    - ftp
+    - httpd
+

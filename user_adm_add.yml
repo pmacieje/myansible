@@ -1,0 +1,12 @@
+- hosts: mylab
+  remote_user: root
+
+  tasks:
+  - name: Add new OS user
+    user: name=testadm comment="Test Adm" uid=10666
+  - name: Set first login password and force to change
+    shell: echo wg123 | passwd testadm --stdin
+  - name: Force to change password at first login
+    shell: passwd -e testadm
+  - name: Add to sudoers
+    shell: echo "testadm ALL=(ALL) NOPASSWD{{':'}} ALL" >> /etc/sudoers

@@ -1,0 +1,11 @@
+- hosts: mylab
+  remote_user: root
+
+  tasks:
+  - name: Install multi packages
+    yum: name={{item}} state=installed
+    with_items:
+    - wget
+    - ftp
+    - httpd
+
