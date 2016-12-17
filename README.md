@@ -1,1 +1,3 @@
-# To moje repozytorium z komendami ad-hoc/playbookami ansibla. Enjoy.
+# myansible
+# It's my Ansible repo with useful playbooks. Enjoy.
+
