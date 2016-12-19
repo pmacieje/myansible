@@ -1,0 +1,12 @@
+- hosts: mylab
+  remote_user: root
+
+  tasks:
+  - name: Add new OS user
+    user: name={{username}} comment="Test Adm" uid={{uid}}
+  - name: Set first login password and force to change
+    shell: echo {{pass}} | passwd {{username}} --stdin
+  - name: Force to change password at first login
+    shell: passwd -e {{username}}
+  - name: Add to sudoers
+    shell: echo "{{username}} ALL=(ALL) NOPASSWD{{':'}} ALL" >> /etc/sudoers
