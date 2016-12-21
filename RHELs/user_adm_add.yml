@@ -10,3 +10,11 @@
     shell: passwd -e {{username}}
   - name: Add to sudoers
     shell: echo "{{username}} ALL=(ALL) NOPASSWD{{':'}} ALL" >> /etc/sudoers
+
+### How To Use ###
+#
+#
+## ansible-playbook user_adm_add.yml -e "username=... pass=... uid=..."
+#
+#
+##################
