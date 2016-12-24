@@ -6,3 +6,13 @@
     user: name={{username}} state=absent remove=yes
   - name: Remove from sudoers
     shell: cat /etc/sudoers | grep -v {{username}} > /root/tmp.sudoers ; cat /root/tmp.sudoers > /etc/sudoers ; rm /root/tmp.sudoers
+
+
+### How To Use ###
+#
+#
+## ansible-playbook user_delete.yml -e "username=..."
+#
+#
+##################
+
