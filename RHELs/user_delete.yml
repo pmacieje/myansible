@@ -1,8 +1,8 @@
-- hosts: c003s7046
+- hosts: mylab
   remote_user: root
 
   tasks:
   - name: Delete OS user
-    user: name=testadm state=absent remove=yes
-  - name: Add to sudoers
-    shell: echo -e '$d\nw\nq' | ed /etc/sudoers
+    user: name={{username}} state=absent remove=yes
+  - name: Remove from sudoers
+    shell: cat /etc/sudoers | grep -v {{username}} > /root/tmp.sudoers ; cat /root/tmp.sudoers > /etc/sudoers ; rm /root/tmp.sudoers
