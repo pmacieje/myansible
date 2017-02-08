@@ -1,0 +1,19 @@
+- hosts: mylab
+  remote_user: root
+
+  tasks:
+  - name: Add new OS PIM user
+    user: name=c003ca comment="PIM user" uid={{uid}}
+  - name: Set first login password and force to change
+    shell: echo {{pass}} | passwd c003ca --stdin
+  - name: Add to sudoers
+    shell: echo "c003ca ALL=(ALL) NOPASSWD{{':'}} /usr/bin/passwd" >> /etc/sudoers
+
+
+### How To Use ###
+#
+#
+## ansible-playbook user_pim_add.yml -e "uid=... pass=..."
+#
+#
+##################
